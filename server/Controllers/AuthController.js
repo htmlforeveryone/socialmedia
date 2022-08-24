@@ -35,47 +35,7 @@ export const registerUser = async(req,res)=>{
 
 
 
-//Login a user
 
-// export const loginUser = async(req,res) =>{
-//     const {username, password}=req.body
-
-//     try{
-//         const user =await UserModel.findOne({username : username})
-
-//         if(user)
-//         {
-
-//             const validity = await bcrypt.compare(password , user.password)
-        
-        
-//          if(!validity)
-//          {
-//             res.status(400).json("Wrong password")
-//          }
-//          else
-//          {
-//             const token = jwt.sign({
-//                 username : user.username, id : user._id
-
-//         },process.env.JWT_KEY , { expiresIn : '1h' })
-//         res.status(200).json({user,token})
-
-//          }
-            
-//         }
-
-//         else{
-//             res.status(400).json("user not exist")   
-//         }
-//     }catch(error){
-            
-
-//         res.status(500).json({message : error.message})
-
-
-//     }
-// }
 
 export const loginUser = async (req, res) => {
     const { username, password } = req.body;
